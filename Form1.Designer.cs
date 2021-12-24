@@ -30,8 +30,9 @@ namespace Lector_de_archivos
         private void InitializeComponent()
         {
             this.txtPathBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDBPathBox = new System.Windows.Forms.TextBox();
             this.btnRead = new System.Windows.Forms.Button();
+            this.DBConnectionBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPathBox
@@ -41,12 +42,12 @@ namespace Lector_de_archivos
             this.txtPathBox.Size = new System.Drawing.Size(100, 20);
             this.txtPathBox.TabIndex = 0;
             // 
-            // textBox1
+            // txtDBPathBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(212, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtDBPathBox.Location = new System.Drawing.Point(212, 12);
+            this.txtDBPathBox.Name = "txtDBPathBox";
+            this.txtDBPathBox.Size = new System.Drawing.Size(100, 20);
+            this.txtDBPathBox.TabIndex = 1;
             // 
             // btnRead
             // 
@@ -58,13 +59,24 @@ namespace Lector_de_archivos
             this.btnRead.UseVisualStyleBackColor = true;
             this.btnRead.Click += new System.EventHandler(this.Btnstart_Click);
             // 
+            // DBConnectionBtn
+            // 
+            this.DBConnectionBtn.Location = new System.Drawing.Point(212, 38);
+            this.DBConnectionBtn.Name = "DBConnectionBtn";
+            this.DBConnectionBtn.Size = new System.Drawing.Size(100, 23);
+            this.DBConnectionBtn.TabIndex = 3;
+            this.DBConnectionBtn.Text = "Conectar a DB";
+            this.DBConnectionBtn.UseVisualStyleBackColor = true;
+            this.DBConnectionBtn.Click += new System.EventHandler(this.DBConnectionBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DBConnectionBtn);
             this.Controls.Add(this.btnRead);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDBPathBox);
             this.Controls.Add(this.txtPathBox);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -76,8 +88,9 @@ namespace Lector_de_archivos
         #endregion
 
         private System.Windows.Forms.TextBox txtPathBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDBPathBox;
         private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.Button DBConnectionBtn;
     }
 }
 
