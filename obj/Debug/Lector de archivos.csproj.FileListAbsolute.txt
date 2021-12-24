@@ -1,0 +1,9 @@
+D:\Insight concept\Lector de archivos\bin\Debug\Lector de archivos.exe.config
+D:\Insight concept\Lector de archivos\bin\Debug\Lector de archivos.exe
+D:\Insight concept\Lector de archivos\bin\Debug\Lector de archivos.pdb
+D:\Insight concept\Lector de archivos\obj\Debug\Lector de archivos.csproj.AssemblyReference.cache
+D:\Insight concept\Lector de archivos\obj\Debug\Lector_de_archivos.Properties.Resources.resources
+D:\Insight concept\Lector de archivos\obj\Debug\Lector de archivos.csproj.GenerateResource.cache
+D:\Insight concept\Lector de archivos\obj\Debug\Lector de archivos.csproj.CoreCompileInputs.cache
+D:\Insight concept\Lector de archivos\obj\Debug\Lector de archivos.exe
+D:\Insight concept\Lector de archivos\obj\Debug\Lector de archivos.pdb
