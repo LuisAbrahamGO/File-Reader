@@ -37,21 +37,23 @@ namespace Lector_de_archivos
             // 
             // txtPathBox
             // 
-            this.txtPathBox.Location = new System.Drawing.Point(12, 12);
+            this.txtPathBox.Location = new System.Drawing.Point(11, 67);
             this.txtPathBox.Name = "txtPathBox";
-            this.txtPathBox.Size = new System.Drawing.Size(100, 20);
+            this.txtPathBox.Size = new System.Drawing.Size(250, 20);
             this.txtPathBox.TabIndex = 0;
+            this.txtPathBox.Text = "C:\\IMPERIAL\\TXT\\Internet\\Internet_abril\\";
             // 
             // txtDBPathBox
             // 
-            this.txtDBPathBox.Location = new System.Drawing.Point(212, 12);
+            this.txtDBPathBox.Location = new System.Drawing.Point(12, 12);
             this.txtDBPathBox.Name = "txtDBPathBox";
-            this.txtDBPathBox.Size = new System.Drawing.Size(100, 20);
+            this.txtDBPathBox.Size = new System.Drawing.Size(249, 20);
             this.txtDBPathBox.TabIndex = 1;
+            this.txtDBPathBox.Text = "C:\\IMPERIAL\\BD\\";
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(13, 39);
+            this.btnRead.Location = new System.Drawing.Point(12, 94);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(99, 23);
             this.btnRead.TabIndex = 2;
@@ -61,7 +63,7 @@ namespace Lector_de_archivos
             // 
             // DBConnectionBtn
             // 
-            this.DBConnectionBtn.Location = new System.Drawing.Point(212, 38);
+            this.DBConnectionBtn.Location = new System.Drawing.Point(12, 38);
             this.DBConnectionBtn.Name = "DBConnectionBtn";
             this.DBConnectionBtn.Size = new System.Drawing.Size(100, 23);
             this.DBConnectionBtn.TabIndex = 3;
@@ -73,13 +75,13 @@ namespace Lector_de_archivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(289, 142);
             this.Controls.Add(this.DBConnectionBtn);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtDBPathBox);
             this.Controls.Add(this.txtPathBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Utileria: FoliosCFDI";
             this.ResumeLayout(false);
             this.PerformLayout();
 

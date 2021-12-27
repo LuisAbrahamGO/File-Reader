@@ -70,10 +70,11 @@ namespace Lector_de_archivos
             try
             {
                 string sConn = "Driver={Microsoft Visual FoxPro Driver};SourceType=DBF;SourceDB=" + this.txtDBPathBox.Text + ";Exclusive=No;";
+                //string sConn = "Driver={Microsoft dBase Driver (*.dbf)};datasource=" + this.txtDBPathBox.Text + ";";
 
                 this.odbcConnection = new OdbcConnection(sConn);
                 this.odbcConnection.Open();
-                
+
             }
             catch (Exception ex)
             {
@@ -87,16 +88,23 @@ namespace Lector_de_archivos
                 iterador++;
                 try
                 {
-                    this.command = new OdbcCommand("SELECT foliouuid FROM FolioCFDI WHERE serie=@serie AND folio=@folio", this.odbcConnection);
-                    this.command.Parameters.AddWithValue("@serie", fact.serie);
-                    this.command.Parameters.AddWithValue("@folio", fact.folio);
+                    this.command = new OdbcCommand("SELECT foliocfdi.foliouuid FROM foliocfdi WHERE serie = '" + fact.serie + "' AND folio = " + fact.folio, this.odbcConnection);
                     this.dataAdapter = new OdbcDataAdapter(this.command);
 
                     DataTable dataTable = new DataTable();
 
                     this.dataAdapter.Fill(dataTable);
-                    this.list[iterador].uuid = dataTable.Rows[0]["uuid"].ToString();
 
+                    if(dataTable.Rows.Count == 1)
+                    {
+                        this.list[iterador].uuid = dataTable.Rows[0]["foliouuid"].ToString();
+                        this.command = new OdbcCommand("DELETE FROM foliocfdi WHERE serie = '" + fact.serie + "' AND folio = " + fact.folio, this.odbcConnection);
+                        this.command.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        this.list[iterador].uuid = "NOT FOUND";
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -105,14 +113,19 @@ namespace Lector_de_archivos
 
             }
 
-            using (StreamWriter file = new StreamWriter(@"\Users\jazo0\Desktop\DatosFacturas.txt"))
+            MessageBox.Show("Consultados");
+
+            using (StreamWriter file = new StreamWriter(@"C:\IMPERIAL\DatosFacturas.txt"))
             {
                 foreach (Factura fact in list)
                 {
-                   file.WriteLine("@serie, @folio, @uuid", fact.serie, fact.folio, fact.uuid);
+                    string data = fact.serie + "," + fact.folio + "," + fact.uuid;
+
+                    file.WriteLine(data);
                 }
             }
 
+            MessageBox.Show("Exportados");
         }
 
         private void Btnstart_Click(object sender, EventArgs e)
