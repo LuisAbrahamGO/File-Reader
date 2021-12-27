@@ -87,7 +87,7 @@ namespace Lector_de_archivos
                 iterador++;
                 try
                 {
-                    this.command = new OdbcCommand("SELECT Foliouuid FROM FolioCFDI WHERE serie='@serie' AND folio=@folio", this.odbcConnection);
+                    this.command = new OdbcCommand("SELECT foliouuid FROM FolioCFDI WHERE serie=@serie AND folio=@folio", this.odbcConnection);
                     this.command.Parameters.AddWithValue("@serie", fact.serie);
                     this.command.Parameters.AddWithValue("@folio", fact.folio);
                     this.dataAdapter = new OdbcDataAdapter(this.command);
